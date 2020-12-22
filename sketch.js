@@ -26,6 +26,8 @@ var hold;
 
 var jump, jumpbk;
 
+var down, downbk;
+
 function preload() {
 
   bkk = loadImage("cartoon-sci-fi-game-seamless-background-alien-planet-landscape-mountain-crater-visualization-fantasy-nature-view_1284-41500.jpg");
@@ -44,6 +46,8 @@ function preload() {
   packbk = loadImage("coin.png");
 
   jumpbk = loadImage("jump button.png");
+  
+  downbk = loadImage("138524-200.png");
 
 
 
@@ -91,6 +95,10 @@ function setup() {
   jump.scale = 0.15;
   //jump.debug = true;
 
+   down = createSprite(width - 200, 115, 30, 30);
+  down.addImage(downbk);
+  down.scale = 0.15;
+  //jump.debug = true;
 
 }
 
@@ -156,8 +164,12 @@ function draw() {
     if (mouseIsOver(jump) && alien.y >= 120) {
       alien.velocityY = -12.5;
     }
+    
+     if (mouseIsOver(down) && alien.y >= 120) {
+      alien.velocityY = 12.5;
+    }
 
-    alien.velocityY = alien.velocityY + 0.8
+    //alien.velocityY = alien.velocityY + 0.8
 
     evil1();
 
