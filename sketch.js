@@ -204,7 +204,7 @@ function draw() {
     
     text("click on the alien to restart",width/2 - 150,200, textSize(30));
     
-    if (mousePressedOver(alien)){
+    if (mouseIsOver(alien)){
       replay();
     }
   }
