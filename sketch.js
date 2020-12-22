@@ -135,7 +135,7 @@ function draw() {
 
     text("click on the alien to start", width/2 - 150, 200, fill("white"), textSize(25))
 
-    if (mousePressedOver(alien)) {
+    if (mouseIsOver(alien)) {
       gameState = PLAY;
       
     }
@@ -153,7 +153,7 @@ function draw() {
       bk.x = bk.width / 2;
     }
 
-    if (mousePressedOver(jump) && alien.y >= 120) {
+    if (mouseIsOver(jump) && alien.y >= 120) {
       alien.velocityY = -12.5;
     }
 
