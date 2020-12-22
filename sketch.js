@@ -97,7 +97,7 @@ function setup() {
 
    down = createSprite(width - 200, 115, 30, 30);
   down.addImage(downbk);
-  down.scale = 0.15;
+  down.scale = 0.30;
   //jump.debug = true;
 
 }
