@@ -90,12 +90,12 @@ function setup() {
   hold = createSprite(width/2, 60,width,10);
   hold.shapeColor = rgb(253, 96, 0);
 
-  jump = createSprite(width - 100, 115, 30, 30);
+  jump = createSprite(width/2 + 30, 115, 30, 30);
   jump.addImage(jumpbk);
   jump.scale = 0.15;
   //jump.debug = true;
 
-   down = createSprite(width - 200, 115, 30, 30);
+   down = createSprite(width - 30, 115, 30, 30);
   down.addImage(downbk);
   down.scale = 0.30;
   //jump.debug = true;
@@ -115,7 +115,7 @@ function draw() {
 
   if (mouseIsOver(info)) {
     
-    text("press space to jump", 10, 55, fill("white"),textSize(17.5));
+    text("press the alien to jump", 10, 55, fill("white"),textSize(17.5));
 
     text("from the devil and the skull and obtain", 10, 70, fill("white"),textSize(17.5));
 
@@ -192,8 +192,7 @@ function draw() {
     }
     
     if(alien.isTouching(hold)){
-      gameState = END;
-      alien.velocityY = 0;
+      alien.velocityY = alien.velocityY + 0.8;
     }
 
   }
