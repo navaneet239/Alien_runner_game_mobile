@@ -95,7 +95,7 @@ function setup() {
   jump.scale = 0.15;
   //jump.debug = true;
 
-   down = createSprite(width - 30, 115, 30, 30);
+   down = createSprite(width/2 - 30, 115, 30, 30);
   down.addImage(downbk);
   down.scale = 0.30;
   //jump.debug = true;
@@ -192,7 +192,7 @@ function draw() {
     }
     
     if(alien.isTouching(hold)){
-      alien.velocityY = alien.velocityY + 0.8;
+      alien.velocityY = 12.5;
     }
 
   }
