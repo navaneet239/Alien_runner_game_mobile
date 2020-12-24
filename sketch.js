@@ -87,17 +87,17 @@ function setup() {
   pack.scale = 0.25
   
     
-  //hold = createSprite(width/2, 60,width,10);
-  //hold.shapeColor = rgb(253, 96, 0);
+  hold = createSprite(width/2, 60,width,10);
+  hold.shapeColor = rgb(253, 96, 0);
 
   jump = createSprite(width/2, 115, 30, 30);
   jump.addImage(jumpbk);
   jump.scale = 0.15;
   //jump.debug = true;
 
-   //down = createSprite(width/2 - 40, 115, 30, 30);
-  //down.addImage(downbk);
-  //down.scale = 0.30;
+   down = createSprite(width/2 - 40, 115, 30, 30);
+   down.addImage(downbk);
+   down.scale = 0.30;
   //jump.debug = true;
 
 }
@@ -133,6 +133,8 @@ function draw() {
   text("you", alien.x + 35, alien.y - 40, fill("white"), textSize(20));
 
   text("= " + packItem, pack.x + 20, pack.y + 5)
+  
+  text("danger zone",width/2,hold.y + 5, fill("black"));
 
 
   if (gameState === SET) {
@@ -165,11 +167,11 @@ function draw() {
       alien.velocityY = -12.5;
     }
     
-    // if (mouseIsOver(down) && alien.y >= 120) {
-    //  alien.velocityY = 12.5;
-    //}
+     if (mouseIsOver(down) && alien.y >= 120) {
+      alien.velocityY = 12.5;
+    }
 
-    alien.velocityY = alien.velocityY + 0.8
+    //alien.velocityY = alien.velocityY + 0.8
 
     evil1();
 
@@ -191,11 +193,12 @@ function draw() {
       packItem = 0;
     }
     
-    //if(alien.isTouching(hold)){
-    //  alien.velocityY = 0;
-    //}
+    if(alien.isTouching(hold)){
+      gameState = END;
+      alien.velocityY = 0;
+    }
     
-    //alien.bounceOff(hold);
+    
     
 
   }
