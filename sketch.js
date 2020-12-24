@@ -90,14 +90,14 @@ function setup() {
   //hold = createSprite(width/2, 60,width,10);
   //hold.shapeColor = rgb(253, 96, 0);
 
-  jump = createSprite(width/2 + 40, 115, 30, 30);
+  jump = createSprite(width/2, 115, 30, 30);
   jump.addImage(jumpbk);
   jump.scale = 0.15;
   //jump.debug = true;
 
-   down = createSprite(width/2 - 40, 115, 30, 30);
-  down.addImage(downbk);
-  down.scale = 0.30;
+   //down = createSprite(width/2 - 40, 115, 30, 30);
+  //down.addImage(downbk);
+  //down.scale = 0.30;
   //jump.debug = true;
 
 }
@@ -165,11 +165,11 @@ function draw() {
       alien.velocityY = -12.5;
     }
     
-     if (mouseIsOver(down) && alien.y >= 120) {
-      alien.velocityY = 12.5;
-    }
+    // if (mouseIsOver(down) && alien.y >= 120) {
+    //  alien.velocityY = 12.5;
+    //}
 
-    //alien.velocityY = alien.velocityY + 0.8
+    alien.velocityY = alien.velocityY + 0.8
 
     evil1();
 
@@ -197,9 +197,6 @@ function draw() {
     
     //alien.bounceOff(hold);
     
-    if(alien.y > 60){
-      alien.y = 300;
-    }
 
   }
 
