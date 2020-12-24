@@ -123,7 +123,7 @@ function draw() {
 
     text("your score and coin power pack will become zero but", 10, 100, fill("white"),textSize(17.5));
 
-    text("if you go to the skull,", 10, 115, fill("white"),textSize(17.5));
+    text("if you go to the skull and the red line", 10, 115, fill("white"),textSize(17.5));
 
     text("you are dead.", 10, 130, fill("red"),textSize(17.5));
 
@@ -134,7 +134,6 @@ function draw() {
 
   text("= " + packItem, pack.x + 20, pack.y + 5)
   
-  text("danger zone",width/2 - 5,hold.y, fill("black"));
 
 
   if (gameState === SET) {
