@@ -90,7 +90,7 @@ function setup() {
   hold = createSprite(width/2, 60,width,10);
   hold.shapeColor = rgb(253, 96, 0);
 
-  jump = createSprite(width/2, 115, 30, 30);
+  jump = createSprite(width/2 + 40, 115, 30, 30);
   jump.addImage(jumpbk);
   jump.scale = 0.15;
   //jump.debug = true;
