@@ -90,12 +90,12 @@ function setup() {
   hold = createSprite(width/2, 60,width,10);
   hold.shapeColor = rgb(253, 96, 0);
 
-  jump = createSprite(width/2 + 30, 115, 30, 30);
+  jump = createSprite(width/2 + 40, 115, 30, 30);
   jump.addImage(jumpbk);
   jump.scale = 0.15;
   //jump.debug = true;
 
-   down = createSprite(width/2 - 30, 115, 30, 30);
+   down = createSprite(width/2 - 40, 115, 30, 30);
   down.addImage(downbk);
   down.scale = 0.30;
   //jump.debug = true;
@@ -191,9 +191,11 @@ function draw() {
       packItem = 0;
     }
     
-    if(alien.isTouching(hold)){
-      alien.velocityY = 12.5;
-    }
+    //if(alien.isTouching(hold)){
+    //  alien.velocityY = 0;
+    //}
+    
+    alien.bounceOff(hold);
 
   }
 
