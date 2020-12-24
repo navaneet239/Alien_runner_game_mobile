@@ -115,7 +115,7 @@ function draw() {
 
   if (mouseIsOver(info)) {
     
-    text("press the alien to jump and press alien", 10, 55, fill("white"),textSize(17.5));
+    text("press the alien to jump and press alien again to go down", 10, 55, fill("white"),textSize(17.5));
 
     text("from the devil and the skull and obtain", 10, 70, fill("white"),textSize(17.5));
 
@@ -134,7 +134,7 @@ function draw() {
 
   text("= " + packItem, pack.x + 20, pack.y + 5)
   
-  text("danger zone",width/2 - ,hold.x + 5, fill("black"));
+  text("danger zone",width/2 - 5,hold.y, fill("black"));
 
 
   if (gameState === SET) {
@@ -223,7 +223,7 @@ function draw() {
     skullGroup.setLifetimeEach(-1);
     coinGroup.setLifetimeEach(-1);
     
-    text("click on the alien to restart",width/2 - 150,200, textSize(30));
+    text("click on the alien to restart",width/2 - 150,200, textSize(30), fill("white"));
     
     if (mouseIsOver(alien)){
       replay();
