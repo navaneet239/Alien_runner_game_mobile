@@ -90,14 +90,14 @@ function setup() {
   hold = createSprite(width/2, 60,width,10);
   hold.shapeColor = rgb(253, 96, 0);
 
-  jump = createSprite(width/2 + 40, 115, 30, 30);
-  jump.addImage(jumpbk);
-  jump.scale = 0.15;
+  //jump = createSprite(width/2 + 40, 115, 30, 30);
+  //jump.addImage(jumpbk);
+  //jump.scale = 0.15;
   //jump.debug = true;
 
-   down = createSprite(width/2 - 40, 115, 30, 30);
-   down.addImage(downbk);
-   down.scale = 0.30;
+   //down = createSprite(width/2 - 40, 115, 30, 30);
+   //down.addImage(downbk);
+   //down.scale = 0.30;
   //jump.debug = true;
 
 }
@@ -115,7 +115,7 @@ function draw() {
 
   if (mouseIsOver(info)) {
     
-    text("press the alien to jump", 10, 55, fill("white"),textSize(17.5));
+    text("press the alien to jump and press alien", 10, 55, fill("white"),textSize(17.5));
 
     text("from the devil and the skull and obtain", 10, 70, fill("white"),textSize(17.5));
 
@@ -134,7 +134,7 @@ function draw() {
 
   text("= " + packItem, pack.x + 20, pack.y + 5)
   
-  text("danger zone",width/2,hold.y + 5, fill("black"));
+  text("danger zone",width/2 - ,hold.x + 5, fill("black"));
 
 
   if (gameState === SET) {
@@ -163,15 +163,19 @@ function draw() {
       bk.x = bk.width / 2;
     }
 
-    if (mouseIsOver(jump) && alien.y >= 120) {
-      alien.velocityY = -12.5;
-    }
+    //if (mouseIsOver(jump) && alien.y >= 120) {
+    //  alien.velocityY = -12.5;
+    //}
     
-     if (mouseIsOver(down) && alien.y >= 120) {
-      alien.velocityY = 12.5;
-    }
+     //if (mouseIsOver(down) && alien.y >= 120) {
+    //  alien.velocityY = 12.5;
+    //}
 
     //alien.velocityY = alien.velocityY + 0.8
+    
+    jumpUp();
+    
+    jumpDown();
 
     evil1();
 
@@ -291,5 +295,21 @@ function replay (){
   
   alien.y = 300;
 
+  
+}
+
+function jumpUp(){
+  
+ if(mouseIsOver(alien)&& alien.y >= 120 || alien.isTouching(invisibleG)){
+   alien.velocityY = -12.5
+ }
+  
+}
+
+function jumpDown(){
+  
+ if(mouseIsOver(alien)&& alien.y >= 120){
+   alien.velocityY = 12.5
+ }
   
 }
