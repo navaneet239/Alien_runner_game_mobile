@@ -22,7 +22,7 @@ var pack, packItem = 0,
 
 var score = 0;
 
-var hold;
+//var hold;
 
 var jump, jumpbk;
 
@@ -87,8 +87,8 @@ function setup() {
   pack.scale = 0.25
   
     
-  hold = createSprite(width/2, 60,width,10);
-  hold.shapeColor = rgb(253, 96, 0);
+  //hold = createSprite(width/2, 60,width,10);
+  //hold.shapeColor = rgb(253, 96, 0);
 
   jump = createSprite(width/2 + 40, 115, 30, 30);
   jump.addImage(jumpbk);
@@ -195,7 +195,11 @@ function draw() {
     //  alien.velocityY = 0;
     //}
     
-    alien.bounceOff(hold);
+    //alien.bounceOff(hold);
+    
+    if(alien.y > 60){
+      alien.y = 300;
+    }
 
   }
 
